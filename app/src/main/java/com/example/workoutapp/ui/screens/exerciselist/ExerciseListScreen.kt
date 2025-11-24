@@ -70,7 +70,7 @@ fun ExerciseListScreen(
                         contentPadding = PaddingValues(16.dp),
                         verticalArrangement = Arrangement.spacedBy(12.dp)
                     ) {
-                        items(uiState.exercises) { exercise ->
+                        items(uiState.exercises, key = { it.id }) { exercise ->
                             ExerciseCard(
                                 exercise = exercise,
                                 onClick = { onExerciseClick(exercise.id) }

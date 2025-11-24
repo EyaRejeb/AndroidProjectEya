@@ -9,7 +9,7 @@ class ExerciseApi(private val client: HttpClient) {
 
     companion object {
         private const val BASE_URL = "https://exercisedb.p.rapidapi.com"
-        private const val API_KEY = "23cd6aa977msh291ae52525ccd4fp1186f1jsn72486447e5bb"
+        private const val API_KEY = "aeb7aec2f0mshb780d5ec7ac5f57p1518fajsn22f9a5472dee"
     }
 
     suspend fun getExercises(

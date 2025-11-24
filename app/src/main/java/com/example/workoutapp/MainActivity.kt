@@ -3,20 +3,41 @@ package com.example.workoutapp
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.runtime.*
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.navigation.compose.rememberNavController
 import com.example.workoutapp.ui.navigation.AppNavigation
 import com.example.workoutapp.ui.theme.WorkoutAppTheme
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.runBlocking
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+        // Installer le splash screen natif
+        installSplashScreen()
+
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+        // Enlever enableEdgeToEdge() pour éviter les problèmes de scroll
 
         val app = application as WorkoutApplication
 
+        // Charger les préférences de thème
+        val initialThemeMode = runBlocking {
+            app.preferencesManager.themeModeFlow.first()
+        }
+
         setContent {
-            WorkoutAppTheme {
+            val themeMode by app.preferencesManager.themeModeFlow.collectAsState(initial = initialThemeMode)
+            val systemInDarkTheme = isSystemInDarkTheme()
+
+            val darkTheme = when (themeMode) {
+                "light" -> false
+                "dark" -> true
+                else -> systemInDarkTheme
+            }
+
+            WorkoutAppTheme(darkTheme = darkTheme) {
                 val navController = rememberNavController()
                 AppNavigation(
                     navController = navController,

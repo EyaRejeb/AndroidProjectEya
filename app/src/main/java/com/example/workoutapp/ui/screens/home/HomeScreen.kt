@@ -51,28 +51,26 @@ fun HomeScreen(
                     )
                 }
                 uiState.bodyParts.isNotEmpty() -> {
-                    Column(
-                        modifier = Modifier
-                            .fillMaxSize()
-                            .padding(16.dp)
+                    LazyVerticalGrid(
+                        columns = GridCells.Fixed(2),
+                        modifier = Modifier.fillMaxSize(),
+                        contentPadding = PaddingValues(16.dp),
+                        horizontalArrangement = Arrangement.spacedBy(12.dp),
+                        verticalArrangement = Arrangement.spacedBy(12.dp)
                     ) {
-                        Text(
-                            text = "Choisissez un groupe musculaire",
-                            style = MaterialTheme.typography.headlineSmall,
-                            modifier = Modifier.padding(bottom = 16.dp)
-                        )
+                        item(span = { androidx.compose.foundation.lazy.grid.GridItemSpan(2) }) {
+                            Text(
+                                text = "Choisissez un groupe musculaire",
+                                style = MaterialTheme.typography.headlineSmall,
+                                modifier = Modifier.padding(bottom = 8.dp)
+                            )
+                        }
 
-                        LazyVerticalGrid(
-                            columns = GridCells.Fixed(2),
-                            horizontalArrangement = Arrangement.spacedBy(12.dp),
-                            verticalArrangement = Arrangement.spacedBy(12.dp)
-                        ) {
-                            items(uiState.bodyParts) { bodyPart ->
-                                BodyPartCard(
-                                    bodyPart = bodyPart,
-                                    onClick = { onBodyPartClick(bodyPart) }
-                                )
-                            }
+                        items(uiState.bodyParts) { bodyPart ->
+                            BodyPartCard(
+                                bodyPart = bodyPart,
+                                onClick = { onBodyPartClick(bodyPart) }
+                            )
                         }
                     }
                 }

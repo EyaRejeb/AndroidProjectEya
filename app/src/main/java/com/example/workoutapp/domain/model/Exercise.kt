@@ -14,6 +14,6 @@ data class Exercise(
     val isFavorite: Boolean = false
 ) {
     fun getImageUrl(resolution: Int = 180): String {
-        return "https://exercisedb.p.rapidapi.com/image?exerciseId=$id&resolution=$resolution&rapidapi-key=23cd6aa977msh291ae52525ccd4fp1186f1jsn72486447e5bb"
+        return "https://exercisedb.p.rapidapi.com/image?exerciseId=$id&resolution=$resolution&rapidapi-key=aeb7aec2f0mshb780d5ec7ac5f57p1518fajsn22f9a5472dee"
     }
 }

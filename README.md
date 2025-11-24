@@ -19,7 +19,7 @@ Scannez le QR code ci-dessous pour télécharger l’APK :
 
 ou cliquez ici :
 
-➡️ **[Télécharger l'APK](https://github.com/EyaRejeb/AndroidProjectEya/releases/latest/download/app-release.apk)**
+➡️ **[Télécharger l'APK](https://github.com/EyaRejeb/AndroidProjectEya/releases/download/v1.0/app-debug.apk)**
 
 ## 📱 Captures d'écran
 

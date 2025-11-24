@@ -44,7 +44,7 @@ class PreferencesManager(private val context: Context) {
         }
     }
 
-    // Statistics
+    // Statistics - Exercises Viewed
     val exercisesViewedCountFlow: Flow<Int> = context.dataStore.data.map { preferences ->
         preferences[EXERCISES_VIEWED_COUNT] ?: 0
     }
@@ -56,6 +56,7 @@ class PreferencesManager(private val context: Context) {
         }
     }
 
+    // Statistics - App Launches
     val appLaunchesCountFlow: Flow<Int> = context.dataStore.data.map { preferences ->
         preferences[APP_LAUNCHES_COUNT] ?: 0
     }
@@ -64,6 +65,14 @@ class PreferencesManager(private val context: Context) {
         context.dataStore.edit { preferences ->
             val currentCount = preferences[APP_LAUNCHES_COUNT] ?: 0
             preferences[APP_LAUNCHES_COUNT] = currentCount + 1
+        }
+    }
+
+    // Reset only statistics (keep theme and other settings)
+    suspend fun resetStatistics() {
+        context.dataStore.edit { preferences ->
+            preferences[EXERCISES_VIEWED_COUNT] = 0
+            preferences[APP_LAUNCHES_COUNT] = 0
         }
     }
 

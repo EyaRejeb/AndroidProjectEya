@@ -6,10 +6,12 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.runtime.*
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.compose.rememberNavController
 import com.example.workoutapp.ui.navigation.AppNavigation
 import com.example.workoutapp.ui.theme.WorkoutAppTheme
 import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 
 class MainActivity : ComponentActivity() {
@@ -18,9 +20,13 @@ class MainActivity : ComponentActivity() {
         installSplashScreen()
 
         super.onCreate(savedInstanceState)
-        // Enlever enableEdgeToEdge() pour éviter les problèmes de scroll
 
         val app = application as WorkoutApplication
+
+        // Incrémenter le compteur de lancements
+        lifecycleScope.launch {
+            app.preferencesManager.incrementAppLaunches()
+        }
 
         // Charger les préférences de thème
         val initialThemeMode = runBlocking {

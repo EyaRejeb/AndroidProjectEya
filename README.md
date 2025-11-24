@@ -824,7 +824,7 @@ Les contributions sont les bienvenues ! Voici comment participer :
 
 ## 👤 Auteur
 
-**Votre Nom**
+**Eya Rejeb**
 - GitHub: [@EyaRejeb](https://github.com/EyaRejeb)
 - Email: eyarejeb02@gmail.com
 

@@ -9,10 +9,8 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Kotlin-2.1.0-purple?style=for-the-badge&logo=kotlin" alt="Kotlin"/>
-  <img src="https://img.shields.io/badge/Jetpack%20Compose-1.7.5-green?style=for-the-badge&logo=jetpackcompose" alt="Jetpack Compose"/>
-  <img src="https://img.shields.io/badge/Android-7.0%2B-blue?style=for-the-badge&logo=android" alt="Android"/>
-  <img src="https://img.shields.io/badge/Architecture-MVVM-orange?style=for-the-badge" alt="MVVM"/>
+  <img src="./Home.png" alt="Home Screen" width="250"/>
+
 </p>
 
 ---
@@ -768,7 +766,7 @@ Les contributions sont les bienvenues ! Voici comment participer :
 ## 👤 Auteur
 
 **Votre Nom**
-- GitHub: [@EyaRejeb](https://github.com/votre-username)
+- GitHub: [@EyaRejeb](https://github.com/EyaRejeb)
 - Email: eyarejeb02@gmail.com
 
 ---

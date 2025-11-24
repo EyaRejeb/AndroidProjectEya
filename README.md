@@ -10,13 +10,6 @@
 
 ## 📱 Captures d'écran
 
-### 🌟 Splash / Logo
-<p align="center">
-  <img src="screenshots/logo.png" alt="App Logo" width="200"/>
-</p>
-
----
-
 ### 🏠 Écran d'accueil (Home)
 <p align="center">
   <img src="screenshots/Home.png" alt="Home Screen" width="250"/>

@@ -1,10 +1,11 @@
-package com.example.workoutapp.ui.screens.profile
+package com.example.workoutapp.presentation.viewmodels.profile
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.workoutapp.data.local.database.WorkoutDatabase
 import com.example.workoutapp.data.preferences.PreferencesManager
 import com.example.workoutapp.data.repository.ExerciseRepository
+import com.example.workoutapp.domain.model.Exercise
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -13,6 +14,7 @@ import kotlinx.coroutines.launch
 data class ProfileUiState(
     val themeMode: String = "system",
     val favoritesCount: Int = 0,
+    val exercisesViewed: Int = 0,
     val isLoading: Boolean = false
 )
 
@@ -41,6 +43,12 @@ class ProfileViewModel(
                 _uiState.value = _uiState.value.copy(favoritesCount = favorites.size)
             }
         }
+
+        viewModelScope.launch {
+            preferencesManager.exercisesViewedCountFlow.collect { count ->
+                _uiState.value = _uiState.value.copy(exercisesViewed = count)
+            }
+        }
     }
 
     fun setThemeMode(mode: String) {
@@ -57,18 +65,22 @@ class ProfileViewModel(
 
     fun clearAllFavorites() {
         viewModelScope.launch {
-            repository.getFavoriteExercises().collect { favorites ->
-                favorites.forEach { exercise ->
-                    repository.toggleFavorite(exercise.id, false)
-                }
+            val favorites = mutableListOf<Exercise>()
+            repository.getFavoriteExercises().collect { list ->
+                favorites.addAll(list)
+            }
+
+            favorites.forEach { exercise ->
+                repository.toggleFavorite(exercise.id, false)
             }
         }
     }
 
     fun clearStatistics() {
         viewModelScope.launch {
-            // Réinitialiser les compteurs dans les préférences
-            preferencesManager.clearAllData()
+            // Réinitialiser uniquement les compteurs de statistiques
+            // Ne pas toucher au thème et autres préférences
+            preferencesManager.resetStatistics()
         }
     }
 }

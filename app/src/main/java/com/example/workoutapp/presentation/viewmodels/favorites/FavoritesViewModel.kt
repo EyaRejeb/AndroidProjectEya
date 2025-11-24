@@ -1,4 +1,4 @@
-package com.example.workoutapp.ui.screens.favorites
+package com.example.workoutapp.presentation.viewmodels.favorites
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

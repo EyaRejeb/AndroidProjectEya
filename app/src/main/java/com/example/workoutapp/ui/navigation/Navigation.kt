@@ -10,16 +10,15 @@ import androidx.navigation.navArgument
 import com.example.workoutapp.di.ViewModelFactory
 import com.example.workoutapp.ui.screens.MainScreen
 import com.example.workoutapp.ui.screens.exercisedetail.ExerciseDetailScreen
-import com.example.workoutapp.ui.screens.exercisedetail.ExerciseDetailViewModel
+import com.example.workoutapp.presentation.viewmodels.exercisedetail.ExerciseDetailViewModel
 import com.example.workoutapp.ui.screens.exerciselist.ExerciseListScreen
-import com.example.workoutapp.ui.screens.exerciselist.ExerciseListViewModel
-import com.example.workoutapp.ui.screens.favorites.FavoritesViewModel
-import com.example.workoutapp.ui.screens.home.HomeViewModel
-import com.example.workoutapp.ui.screens.profile.ProfileViewModel
-import com.example.workoutapp.ui.screens.search.SearchViewModel
+import com.example.workoutapp.presentation.viewmodels.exerciselist.ExerciseListViewModel
+import com.example.workoutapp.presentation.viewmodels.favorites.FavoritesViewModel
+import com.example.workoutapp.presentation.viewmodels.home.HomeViewModel
+import com.example.workoutapp.presentation.viewmodels.profile.ProfileViewModel
+import com.example.workoutapp.presentation.viewmodels.search.SearchViewModel
 import com.example.workoutapp.ui.screens.splash.SplashScreen
-import com.example.workoutapp.ui.screens.statistics.StatisticsViewModel
-import kotlinx.coroutines.delay
+import com.example.workoutapp.presentation.viewmodels.statistics.StatisticsViewModel
 
 sealed class Screen(val route: String) {
     data object Splash : Screen("splash")

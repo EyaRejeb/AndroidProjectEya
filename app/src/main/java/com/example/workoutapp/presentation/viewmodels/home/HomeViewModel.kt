@@ -1,4 +1,4 @@
-package com.example.workoutapp.ui.screens.home
+package com.example.workoutapp.presentation.viewmodels.home
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

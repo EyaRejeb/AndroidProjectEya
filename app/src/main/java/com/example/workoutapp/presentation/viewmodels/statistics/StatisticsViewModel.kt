@@ -1,4 +1,4 @@
-package com.example.workoutapp.ui.screens.statistics
+package com.example.workoutapp.presentation.viewmodels.statistics
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

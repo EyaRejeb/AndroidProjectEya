@@ -12,6 +12,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import com.example.workoutapp.presentation.viewmodels.home.HomeViewModel
 import com.example.workoutapp.ui.components.BodyPartCard
 import com.example.workoutapp.ui.components.ErrorView
 import com.example.workoutapp.ui.components.LoadingView

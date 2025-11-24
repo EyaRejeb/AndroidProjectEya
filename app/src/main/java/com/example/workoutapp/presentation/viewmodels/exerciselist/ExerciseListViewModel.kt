@@ -1,4 +1,4 @@
-package com.example.workoutapp.ui.screens.exercisedetail
+package com.example.workoutapp.presentation.viewmodels.exerciselist
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
@@ -11,33 +11,34 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
-data class ExerciseDetailUiState(
-    val exercise: Exercise? = null,
+data class ExerciseListUiState(
+    val exercises: List<Exercise> = emptyList(),
     val isLoading: Boolean = false,
-    val error: String? = null
+    val error: String? = null,
+    val bodyPart: String = ""
 )
 
-class ExerciseDetailViewModel(
+class ExerciseListViewModel(
     private val repository: ExerciseRepository,
     savedStateHandle: SavedStateHandle
 ) : ViewModel() {
 
-    private val _uiState = MutableStateFlow(ExerciseDetailUiState())
-    val uiState: StateFlow<ExerciseDetailUiState> = _uiState.asStateFlow()
-
-    private val exerciseId: String = savedStateHandle.get<String>("exerciseId") ?: ""
+    private val _uiState = MutableStateFlow(ExerciseListUiState())
+    val uiState: StateFlow<ExerciseListUiState> = _uiState.asStateFlow()
 
     init {
-        loadExercise()
+        val bodyPart = savedStateHandle.get<String>("bodyPart") ?: ""
+        _uiState.value = _uiState.value.copy(bodyPart = bodyPart)
+        loadExercises(bodyPart)
     }
 
-    private fun loadExercise() {
+    private fun loadExercises(bodyPart: String) {
         viewModelScope.launch {
-            repository.getExerciseById(exerciseId).collect { result ->
+            repository.getExercisesByBodyPart(bodyPart).collect { result ->
                 when (result) {
                     is Resource.Success -> {
                         _uiState.value = _uiState.value.copy(
-                            exercise = result.data,
+                            exercises = result.data ?: emptyList(),
                             isLoading = false,
                             error = null
                         )
@@ -56,19 +57,7 @@ class ExerciseDetailViewModel(
         }
     }
 
-    fun toggleFavorite() {
-        viewModelScope.launch {
-            _uiState.value.exercise?.let { exercise ->
-                val newFavoriteStatus = !exercise.isFavorite
-                repository.toggleFavorite(exercise.id, newFavoriteStatus)
-                _uiState.value = _uiState.value.copy(
-                    exercise = exercise.copy(isFavorite = newFavoriteStatus)
-                )
-            }
-        }
-    }
-
     fun retry() {
-        loadExercise()
+        loadExercises(_uiState.value.bodyPart)
     }
 }

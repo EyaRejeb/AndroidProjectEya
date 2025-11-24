@@ -1,6 +1,5 @@
 package com.example.workoutapp.ui.screens.favorites
 
-import androidx.compose.animation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -13,6 +12,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.example.workoutapp.domain.model.Exercise
+import com.example.workoutapp.presentation.viewmodels.favorites.FavoritesViewModel
+import com.example.workoutapp.presentation.viewmodels.favorites.GroupBy
 import com.example.workoutapp.ui.components.ExerciseCard
 import com.example.workoutapp.ui.components.LoadingView
 

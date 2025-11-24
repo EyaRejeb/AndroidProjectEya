@@ -1,4 +1,4 @@
-package com.example.workoutapp.ui.screens.search
+package com.example.workoutapp.presentation.viewmodels.search
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

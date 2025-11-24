@@ -13,15 +13,15 @@ import androidx.navigation.compose.rememberNavController
 import com.example.workoutapp.ui.navigation.BottomNavItem
 import com.example.workoutapp.ui.navigation.bottomNavItems
 import com.example.workoutapp.ui.screens.favorites.FavoritesScreen
-import com.example.workoutapp.ui.screens.favorites.FavoritesViewModel
+import com.example.workoutapp.presentation.viewmodels.favorites.FavoritesViewModel
 import com.example.workoutapp.ui.screens.home.HomeScreen
-import com.example.workoutapp.ui.screens.home.HomeViewModel
+import com.example.workoutapp.presentation.viewmodels.home.HomeViewModel
 import com.example.workoutapp.ui.screens.profile.ProfileScreen
-import com.example.workoutapp.ui.screens.profile.ProfileViewModel
+import com.example.workoutapp.presentation.viewmodels.profile.ProfileViewModel
 import com.example.workoutapp.ui.screens.search.SearchScreen
-import com.example.workoutapp.ui.screens.search.SearchViewModel
+import com.example.workoutapp.presentation.viewmodels.search.SearchViewModel
 import com.example.workoutapp.ui.screens.statistics.StatisticsScreen
-import com.example.workoutapp.ui.screens.statistics.StatisticsViewModel
+import com.example.workoutapp.presentation.viewmodels.statistics.StatisticsViewModel
 
 @Composable
 fun MainScreen(

@@ -1,6 +1,5 @@
 package com.example.workoutapp.di
 
-import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.createSavedStateHandle
@@ -9,13 +8,13 @@ import com.example.workoutapp.data.local.database.WorkoutDatabase
 import com.example.workoutapp.data.preferences.PreferencesManager
 import com.example.workoutapp.data.remote.api.ExerciseApi
 import com.example.workoutapp.data.repository.ExerciseRepository
-import com.example.workoutapp.ui.screens.exercisedetail.ExerciseDetailViewModel
-import com.example.workoutapp.ui.screens.exerciselist.ExerciseListViewModel
-import com.example.workoutapp.ui.screens.favorites.FavoritesViewModel
-import com.example.workoutapp.ui.screens.home.HomeViewModel
-import com.example.workoutapp.ui.screens.profile.ProfileViewModel
-import com.example.workoutapp.ui.screens.search.SearchViewModel
-import com.example.workoutapp.ui.screens.statistics.StatisticsViewModel
+import com.example.workoutapp.presentation.viewmodels.exercisedetail.ExerciseDetailViewModel
+import com.example.workoutapp.presentation.viewmodels.exerciselist.ExerciseListViewModel
+import com.example.workoutapp.presentation.viewmodels.favorites.FavoritesViewModel
+import com.example.workoutapp.presentation.viewmodels.home.HomeViewModel
+import com.example.workoutapp.presentation.viewmodels.profile.ProfileViewModel
+import com.example.workoutapp.presentation.viewmodels.search.SearchViewModel
+import com.example.workoutapp.presentation.viewmodels.statistics.StatisticsViewModel
 
 class ViewModelFactory(
     private val repository: ExerciseRepository,
@@ -48,7 +47,7 @@ class ViewModelFactory(
                 ExerciseListViewModel(repository, savedStateHandle) as T
             }
             modelClass.isAssignableFrom(ExerciseDetailViewModel::class.java) -> {
-                ExerciseDetailViewModel(repository, savedStateHandle) as T
+                ExerciseDetailViewModel(repository, preferencesManager, savedStateHandle) as T
             }
             else -> throw IllegalArgumentException("Unknown ViewModel class: ${modelClass.name}")
         }

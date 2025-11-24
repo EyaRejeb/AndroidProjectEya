@@ -8,9 +8,75 @@
   <strong>Une application Android moderne pour découvrir et organiser vos exercices de fitness</strong>
 </p>
 
+## 📱 Captures d'écran
+
+### 🌟 Splash / Logo
+<p align="center">
+  <img src="screenshots/logo.png" alt="App Logo" width="200"/>
+</p>
+
+---
+
+### 🏠 Écran d'accueil (Home)
 <p align="center">
   <img src="screenshots/Home.png" alt="Home Screen" width="250"/>
+  <img src="screenshots/accueil.png" alt="Accueil Light" width="250"/>
+  <img src="screenshots/accueilNightMode.png" alt="Accueil Dark" width="250"/>
+</p>
 
+---
+
+### 💪 Groupes musculaires
+<p align="center">
+  <img src="screenshots/muscleGroup.png" alt="Muscle Group Screen" width="250"/>
+</p>
+
+---
+
+### 📚 Liste d'exercices
+<p align="center">
+  <img src="screenshots/Exercise.png" alt="Exercise List" width="250"/>
+</p>
+
+---
+
+### 🔎 Détails de l'exercice
+<p align="center">
+  <img src="screenshots/ExerciseFavoris.png" alt="Exercise Detail Favoris" width="250"/>
+</p>
+
+---
+
+### ❤️ Page Favoris
+<p align="center">
+  <img src="screenshots/favoris.png" alt="Favoris" width="250"/>
+  <img src="screenshots/favorisFilter.png" alt="Favoris Filter" width="250"/>
+  <img src="screenshots/favorisNightMode.png" alt="Favoris Night Mode" width="250"/>
+</p>
+
+---
+
+### 🔍 Recherche Avancée
+<p align="center">
+  <img src="screenshots/search.png" alt="Search" width="250"/>
+  <img src="screenshots/searchFilters.png" alt="Search Filters" width="250"/>
+</p>
+
+---
+
+### 📊 Statistiques
+<p align="center">
+  <img src="screenshots/stats.png" alt="Statistics" width="250"/>
+  <img src="screenshots/statsNightMode.png" alt="Statistics Night" width="250"/>
+</p>
+
+---
+
+### ⚙️ Profil & Paramètres
+<p align="center">
+  <img src="screenshots/ProfileSettings.png" alt="Profile Settings" width="250"/>
+  <img src="screenshots/ProfileSettingsNightMode.png" alt="Profile Settings Dark" width="250"/>
+  <img src="screenshots/nightMode.png" alt="Night Mode Settings" width="250"/>
 </p>
 
 ---

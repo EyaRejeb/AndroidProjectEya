@@ -8,6 +8,19 @@
   <strong>Une application Android moderne pour découvrir et organiser vos exercices de fitness</strong>
 </p>
 
+
+## 📥 Télécharger l'application
+
+Scannez le QR code ci-dessous pour télécharger l’APK :
+
+<p align="center">
+  <img src="screenshots/downloadAPK.png" alt="QR Code APK" width="250"/>
+</p>
+
+ou cliquez ici :
+
+➡️ **[Télécharger l'APK](https://github.com/EyaRejeb/AndroidProjectEya/releases/latest/download/app-release.apk)**
+
 ## 📱 Captures d'écran
 
 ### 🏠 Écran d'accueil (Home)

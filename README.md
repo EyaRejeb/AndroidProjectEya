@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <img src="./Home.png" alt="Home Screen" width="250"/>
+  <img src="screenshots/Home.png" alt="Home Screen" width="250"/>
 
 </p>
 

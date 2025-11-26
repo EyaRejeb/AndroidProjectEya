@@ -21,6 +21,21 @@ ou cliquez ici :
 
 ➡️ **[Télécharger l'APK](https://github.com/EyaRejeb/AndroidProjectEya/releases/download/v1.0/app-debug.apk)**
 
+# 🗣️ Témoignages des utilisateurs
+
+### ⭐⭐⭐⭐⭐ 5/5
+
+**Eya Rejeb :**
+> *"Application extrêmement utile et très bien conçue ! Je l’utilise désormais à chaque séance à la salle (Basic Fit de Castres) après les cours. L’interface est intuitive, simple et vraiment pratique… elle m’aide à mieux comprendre les exercices à réaliser ! Depuis le jour où je l’ai développée, je l’utilise moi-même et je continuerai à l’améliorer progressivement, car étant à la fois développeuse et utilisatrice, je bénéficie d’une expérience utilisateur réelle et authentique."*
+
+<p align="center">
+  <img src="./screenshots/image1.jpeg" alt="User Review 1" width="250"/>
+  <img src="screenshots/image2.jpeg" alt="User Review 2" width="250"/>
+  <img src="screenshots/image3.jpeg" alt="User Review 3" width="250"/>
+</p>
+
+---
+
 ## 📱 Captures d'écran
 
 ### 🏠 Écran d'accueil (Home)
